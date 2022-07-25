@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Results View Controller-->
         <scene sceneID="2ON-vO-uo5">
             <objects>
-                <viewController id="SgB-Ek-jga" sceneMemberID="viewController">
+                <viewController id="SgB-Ek-jga" customClass="ResultsViewController" customModule="Tipsy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XmA-OP-nZ7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -62,6 +62,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10f"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="recalculatePressed:" destination="SgB-Ek-jga" eventType="touchUpInside" id="cV2-tu-jnA"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Split between 2 people, with 10% tip." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYO-Pb-o2q">
                                 <rect key="frame" x="50" y="305" width="314" height="117"/>
@@ -86,6 +89,10 @@
                             <constraint firstItem="23d-t9-XBx" firstAttribute="bottom" secondItem="EA5-qu-VwS" secondAttribute="bottom" id="TRI-wP-Ie5"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="settingsLabel" destination="GYO-Pb-o2q" id="7Nc-yY-OnT"/>
+                        <outlet property="totalLabel" destination="e8z-34-CVA" id="0AO-TY-vLe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V6E-91-N7T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -128,6 +135,9 @@
                                                         <state key="normal" title="0%">
                                                             <color key="titleColor" red="0.0" green="0.69019607839999997" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="tipChanged:" destination="bxb-1Z-MoN" eventType="touchUpInside" id="6GX-V3-eMc"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zxe-ed-a6z">
                                                         <rect key="frame" x="101" y="0.0" width="172" height="54"/>
@@ -139,6 +149,9 @@
                                                         <state key="normal" title="10%">
                                                             <color key="titleColor" red="0.0" green="0.69019607839999997" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="tipChanged:" destination="bxb-1Z-MoN" eventType="touchUpInside" id="UP1-o0-GE7"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9X-Uu-YPm">
                                                         <rect key="frame" x="273" y="0.0" width="101" height="54"/>
@@ -150,6 +163,9 @@
                                                         <state key="normal" title="20%">
                                                             <color key="titleColor" red="0.0" green="0.69019607839999997" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="tipChanged:" destination="bxb-1Z-MoN" eventType="touchUpInside" id="9Ca-30-kuP"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -185,6 +201,9 @@
                                                             <constraint firstAttribute="width" constant="94" id="g8h-03-LUd"/>
                                                         </constraints>
                                                         <color key="tintColor" red="0.0" green="0.59227246050000004" blue="0.347086966" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <connections>
+                                                            <action selector="stepperValueChanged:" destination="bxb-1Z-MoN" eventType="valueChanged" id="Sqi-QU-ph5"/>
+                                                        </connections>
                                                     </stepper>
                                                 </subviews>
                                             </stackView>
@@ -250,6 +269,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10f"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="calculatePressed:" destination="bxb-1Z-MoN" eventType="touchUpInside" id="aBn-2m-sf1"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tdY-T4-fli"/>
@@ -266,6 +288,14 @@
                             <constraint firstItem="Thy-NZ-z1W" firstAttribute="leading" secondItem="tdY-T4-fli" secondAttribute="leading" id="y72-HD-JxZ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="billTextField" destination="GUY-kq-Ilt" id="w71-J1-AJy"/>
+                        <outlet property="splitNumberLabel" destination="uzn-cp-P9I" id="CyS-0i-F2F"/>
+                        <outlet property="tenPctButton" destination="Zxe-ed-a6z" id="2M0-5z-XG0"/>
+                        <outlet property="twentyPctButton" destination="S9X-Uu-YPm" id="cb5-vE-lQu"/>
+                        <outlet property="zeroPctButton" destination="VAd-tV-Z8C" id="NcN-i3-4J4"/>
+                        <segue destination="SgB-Ek-jga" kind="presentation" identifier="goToResults" modalPresentationStyle="fullScreen" id="JyD-wx-Jgy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4LU-1L-mWt" sceneMemberID="firstResponder"/>
             </objects>
