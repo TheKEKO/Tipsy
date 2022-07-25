@@ -39,13 +39,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D45EEF33288C827100810445 /* Controllers */ = {
+		D45EEF33288C827100810445 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				D4A31134288B16FB00C80C7C /* CalculatorViewController.swift */,
 				D45EEF31288C824300810445 /* ResultsViewController.swift */,
 			);
-			path = Controllers;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		D4A31124288B16FB00C80C7C = {
@@ -67,15 +67,39 @@
 		D4A3112F288B16FB00C80C7C /* Tipsy */ = {
 			isa = PBXGroup;
 			children = (
-				D4A31130288B16FB00C80C7C /* AppDelegate.swift */,
-				D4A31132288B16FB00C80C7C /* SceneDelegate.swift */,
-				D45EEF33288C827100810445 /* Controllers */,
-				D4A31136288B16FB00C80C7C /* Main.storyboard */,
-				D4A31139288B16FC00C80C7C /* Assets.xcassets */,
-				D4A3113B288B16FC00C80C7C /* LaunchScreen.storyboard */,
-				D4A3113E288B16FC00C80C7C /* Info.plist */,
+				D45EEF33288C827100810445 /* ViewControllers */,
+				D4E2B6BB288F2CB900D4A166 /* Storyboards */,
+				D4E2B6BC288F2CC700D4A166 /* Resources */,
+				D4E2B6BD288F2CD300D4A166 /* App */,
 			);
 			path = Tipsy;
+			sourceTree = "<group>";
+		};
+		D4E2B6BB288F2CB900D4A166 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D4A31136288B16FB00C80C7C /* Main.storyboard */,
+				D4A3113B288B16FC00C80C7C /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		D4E2B6BC288F2CC700D4A166 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D4A31139288B16FC00C80C7C /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D4E2B6BD288F2CD300D4A166 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D4A3113E288B16FC00C80C7C /* Info.plist */,
+				D4A31130288B16FB00C80C7C /* AppDelegate.swift */,
+				D4A31132288B16FB00C80C7C /* SceneDelegate.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,7 +325,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VWJHPQLGW8;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Tipsy/Info.plist;
+				INFOPLIST_FILE = Tipsy/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -330,7 +354,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VWJHPQLGW8;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Tipsy/Info.plist;
+				INFOPLIST_FILE = Tipsy/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
